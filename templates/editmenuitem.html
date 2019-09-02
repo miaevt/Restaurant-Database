@@ -4,26 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Edit Menu Item</title>
   </head>
-  <form action="#" method="POST">
+  <form
+    action="{{ url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}"
+    method="POST"
+  >
     <h2>Edit {{ item.name }}</h2>
-    <p>Name:<input type="text" name="name" placeholder="{{ item.name }}" /></p>
-    <p>
-      Course:<input type="text" name="course" placeholder="{{ item.course }}" />
-    </p>
-    <p>
-      Price:<input type="text" name="course" placeholder="{{ item.price }}" />
-    </p>
+    <p>Name:<input type="text" name="name" value="{{ item.name }}" /></p>
+    <p>Course:<input type="text" name="course" value="{{ item.course }}" /></p>
+    <p>Price:<input type="text" name="price" value="{{ item.price }}" /></p>
     <p>
       Description:<textarea
         name="description"
         rows="10"
         cols="30"
-        placeholder="{{ item.description }}"
-      ></textarea>
+        draggable="false"
+        >{{ item.description }}</textarea
+      >
     </p>
-    <button type="submit">Edit</button>
-    <button type="submit">Cancel</button>
+    <input type="submit" value="Edit" />
+    <button
+      type="submit"
+      formaction="{{ url_for('showMenu', restaurant_id=restaurant_id) }}"
+    >
+      Cancel
+    </button>
   </form>
 </html>

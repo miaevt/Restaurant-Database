@@ -12,7 +12,7 @@
   >
     <h2>Change Restaurant Name</h2>
     <p>
-      <input type="text" name="name" placeholder="{{ restaurant.name }}" />
+      <input type="text" name="name" value="{{ restaurant.name }}" />
     </p>
     <input type="submit" value="Change" />
     <button type="submit" formaction="{{ url_for('showRestaurants') }}">
