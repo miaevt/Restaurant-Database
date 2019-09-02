@@ -9,7 +9,7 @@
   <body>
     <h1>{{ restaurant.name }}</h1>
 
-    {% for item in items %}
+    {% if items %} {% for item in items %}
     <div id="menu">
       {{ item.name }}<br />
       {{ item.description }}<br />
@@ -17,6 +17,9 @@
       <a href="#">Edit</a>
       <a href="#">Delete</a><br /><br />
     </div>
-    {% endfor %}
+    {% endfor %} {% else %}
+    <p>There are currently no menu items.</p>
+    <a href="#">Create new menu item</a>
+    {% endif %}
   </body>
 </html>

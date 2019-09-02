@@ -8,13 +8,15 @@
   </head>
   <body>
     <h1>Restaurants</h1>
-
-    {% for restaurant in restaurants %}
+    {% if restaurants %} {% for restaurant in restaurants %}
     <div id="restaurants">
       {{ restaurant.name }}<br />
       <a href="#">Edit</a>
       <a href="#">Delete</a><br /><br />
     </div>
-    {% endfor %}
+    {% endfor %} {% else %}
+    <p>There are currently no restaurants.</p>
+    <a href="#">Create new restaurant</a>
+    {% endif %}
   </body>
 </html>
