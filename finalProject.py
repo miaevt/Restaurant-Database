@@ -2,7 +2,7 @@ from sqlalchemy.pool import StaticPool
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from database_setup import Base, Restaurant, MenuItem
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
 engine = create_engine('sqlite:///restaurantmenu.db', connect_args={'check_same_thread': False},
@@ -12,6 +12,36 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+
+# API Endpoint for restaurants
+
+@app.route('/JSON')
+@app.route('/restaurants/JSON')
+def showRestaurantsJSON():
+    restaurants = session.query(Restaurant).all()
+    return jsonify(Restaurants=[restaurant.serialize for restaurant in restaurants])
+
+
+# API Endpoint for menu
+
+@app.route('/restaurant/<int:restaurant_id>/JSON')
+@app.route('/restaurant/<int:restaurant_id>/menu/JSON')
+def showMenuJSON(restaurant_id):
+    #restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
+    items = session.query(MenuItem).filter_by(
+        restaurant_id=restaurant_id).all()
+    return jsonify(Menu=[item.serialize for item in items])
+
+
+# API Endpoint for menu item
+
+@app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/JSON')
+def showMenuItemJSON(restaurant_id, menu_id):
+    #restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
+    item = session.query(MenuItem).filter_by(id=menu_id).one()
+    return jsonify(MenuItem=item.serialize)
+
+
 # This page will show all of my restaurants
 
 @app.route('/', methods=['GET', 'POST'])
@@ -19,6 +49,7 @@ session = DBSession()
 def showRestaurants():
     restaurants = session.query(Restaurant).all()
     return render_template('restaurants.html', restaurants=restaurants)
+
 
 # This page is for making a new restaurant
 
@@ -31,6 +62,7 @@ def newRestaurant():
         return redirect(url_for('showRestaurants'))
     else:
         return render_template('newrestaurant.html')
+
 
 # This page is for editing each restaurant
 
@@ -45,6 +77,7 @@ def editRestaurant(restaurant_id):
         return redirect(url_for('showRestaurants'))
     else:
         return render_template('editrestaurant.html', restaurant=restaurant)
+
 
 # This page is for deleting each restaurant
 
@@ -71,6 +104,7 @@ def showMenu(restaurant_id):
         restaurant_id=restaurant_id).all()
     return render_template('menu.html', restaurant=restaurant, items=items)
 
+
 # This page is for making a new menu item
 
 @app.route('/restaurant/<int:restaurant_id>/menu/new/', methods=['GET', 'POST'])
@@ -84,6 +118,7 @@ def newMenuItem(restaurant_id):
         return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     else:
         return render_template('newmenuitem.html', restaurant_id=restaurant_id)
+
 
 # This page is for editing each menu item
 
@@ -101,6 +136,7 @@ def editMenuItem(restaurant_id, menu_id):
         return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     else:
         return render_template('editmenuitem.html', restaurant_id=restaurant_id, item=item)
+
 
 # This page is for deleting each menu item
 
