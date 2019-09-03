@@ -10,6 +10,15 @@
     action="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}"
     method="POST"
   >
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {%for message in messages%}
+      <li>
+        <strong> {{ message }} </strong>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
     <h2>Change Restaurant Name</h2>
     <p>
       <input type="text" name="name" value="{{ restaurant.name }}" />

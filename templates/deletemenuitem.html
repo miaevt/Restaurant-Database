@@ -10,6 +10,15 @@
     action="{{ url_for('deleteMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}"
     method="POST"
   >
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {%for message in messages%}
+      <li>
+        <strong> {{ message }} </strong>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
     <h4>Are you sure you want to delete {{ item.name }}?</h4>
     <input type="submit" value="Yes" />
     <button

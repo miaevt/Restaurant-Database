@@ -10,6 +10,15 @@
     action="{{ url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}"
     method="POST"
   >
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {%for message in messages%}
+      <li>
+        <strong> {{ message }} </strong>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
     <h2>Edit {{ item.name }}</h2>
     <p>Name:<input type="text" name="name" value="{{ item.name }}" /></p>
     <p>Course:<input type="text" name="course" value="{{ item.course }}" /></p>
