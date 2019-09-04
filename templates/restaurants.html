@@ -4,6 +4,7 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static',
 filename='styles.css')
 
+
     }}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,17 +18,19 @@ filename='styles.css')
         <a href="{{ url_for('newRestaurant') }}">Create new restaurant</a>
       </h4>
     </h1>-->
-    <div class="lol"></div>
-    <div class="menu">
-      <img src="../static/menucover.png" />
-      <div class="container">
+    <img src="../static/foodplate1.png" class="food1" />
+    <div class="yellowbox">
+      <img src="../static/restauranttitle.png" class="title" />
+    </div>
+    <div class="greenbox">
+      <div class="restcontain">
         {% if restaurants %} {% for restaurant in restaurants %}
         <div class="restaurant">
           <a
             href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}"
             class="rname"
             >{{ restaurant.name }}</a
-          ><br /><br />
+          ><br />
           <!-- <a
             href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}"
             class="nav-links"
@@ -39,7 +42,7 @@ filename='styles.css')
             >Delete</a
             >-->
         </div>
-        <br />
+
         {% endfor %}
       </div>
     </div>

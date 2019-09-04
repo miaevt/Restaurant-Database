@@ -1,34 +1,53 @@
 body {
-  background-image: url(brickwall.jpg);
+  background-image: url(graycloth.jpg);
   background-size: cover;
   background-position: -180px -56px;
   background-attachment: absolute;
   background-repeat: repeat;
   background-size: 120%;
+  overflow: hidden;
 }
-
-div.container {
+img.food1 {
+  height: 30%;
+  width: 30%;
+  display: block;
+  margin: 20% 0% 0% 70%;
+}
+div.yellowbox {
+  position: fixed;
+  top: -5%;
+  right: 20%;
+  height: 250px;
+  width: 60vw;
+  background-color: #f9fcd1;
+  border-radius: 23px;
   border: none;
-  width: 50%;
+  text-align: center;
+}
+img.title {
   height: 50%;
-  left: 22%;
+  width: 50%;
   top: 35%;
+  position: relative;
+}
+div.greenbox {
+  position: fixed;
+  bottom: -30%;
+  right: 20%;
+  height: 686px;
+  width: 60vw;
+  background-color: #d2eae3;
+  border-radius: 23px;
+  border: none;
+}
+div.restcontain {
+  border: none;
+  width: 99%;
+  height: 61%;
+  left: 0%;
+  top: 5%;
   overflow-y: auto;
   position: absolute;
-}
-img {
-  width: 530px;
-  height: 686px;
-  object-fit: cover;
-  visibility: visible;
-}
-div.menu {
-  position: absolute;
-  top: 6%;
-  right: 8%;
-  height: 690px;
-  width: 540px;
-  border: none;
 }
 div.restaurant {
   border: none;
@@ -42,8 +61,8 @@ div.restaurant {
 }
 .rname {
   text-decoration: none;
-  color: #9c9595;
-  font: 1.5em "times new roman";
+  color: #3c3b3b;
+  font: 2.5em "Gabriola";
 }
 .nav-links {
   text-decoration: none;
