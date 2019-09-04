@@ -1,0 +1,53 @@
+body {
+  background-image: url(brickwall.jpg);
+  background-size: cover;
+  background-position: -180px -56px;
+  background-attachment: absolute;
+  background-repeat: repeat;
+  background-size: 120%;
+}
+
+div.container {
+  border: none;
+  width: 50%;
+  height: 50%;
+  left: 22%;
+  top: 35%;
+  overflow-y: auto;
+  position: absolute;
+}
+img {
+  width: 530px;
+  height: 686px;
+  object-fit: cover;
+  visibility: visible;
+}
+div.menu {
+  position: absolute;
+  top: 6%;
+  right: 8%;
+  height: 690px;
+  width: 540px;
+  border: none;
+}
+div.restaurant {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 50%;
+  height: auto;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  padding: 1%;
+}
+.rname {
+  text-decoration: none;
+  color: #9c9595;
+  font: 1.5em "times new roman";
+}
+.nav-links {
+  text-decoration: none;
+  color: #9c9595;
+  font: 1em sans-serif;
+  padding: 5%;
+}
