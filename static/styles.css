@@ -7,13 +7,29 @@ body {
   background-size: 120%;
   overflow: hidden;
 }
-img.food1 {
-  height: 30%;
-  width: 30%;
-  display: block;
-  margin: 20% 0% 0% 70%;
+.food1contain {
+  height: 483px;
+  width: 469px;
+  border: none;
+  margin: 20% 10% 0% 70%;
 }
-div.yellowbox {
+.food1 {
+  height: 97%;
+  width: 97%;
+  margin: 0% 0% 0% 0%;
+}
+.food2contain {
+  height: 483px;
+  width: 469px;
+  border: none;
+  margin: -45% 0% 0% 0%;
+}
+.food2 {
+  height: 90%;
+  width: 90%;
+  margin: 0% 0% 0% 0%;
+}
+.yellowbox {
   position: fixed;
   top: -5%;
   right: 20%;
@@ -30,17 +46,20 @@ img.title {
   top: 35%;
   position: relative;
 }
-div.greenbox {
+.greenbox {
   position: fixed;
   bottom: -30%;
   right: 20%;
   height: 686px;
   width: 60vw;
   background-color: #d2eae3;
+  background-image: url(../static/confetti.png);
+  background-size: 30%;
+  background-repeat: repeat;
   border-radius: 23px;
   border: none;
 }
-div.restcontain {
+.restcontain {
   border: none;
   width: 99%;
   height: 61%;
@@ -49,10 +68,10 @@ div.restcontain {
   overflow-y: auto;
   position: absolute;
 }
-div.restaurant {
+.restaurant {
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  width: 50%;
+  width: 80%;
   height: auto;
   text-align: center;
   position: relative;
@@ -69,4 +88,7 @@ div.restaurant {
   color: #9c9595;
   font: 1em sans-serif;
   padding: 5%;
+}
+.rname:hover {
+  background-color: #f9c459;
 }
