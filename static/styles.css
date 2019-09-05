@@ -39,7 +39,7 @@ body {
   border: none;
   text-align: center;
 }
-img.title {
+.title {
   height: 50%;
   width: 50%;
   top: 35%;
@@ -90,4 +90,85 @@ img.title {
 }
 .rname:hover {
   background-color: #f9c459;
+}
+.menucontain {
+  z-index: 1;
+  height: 650px;
+  width: 76vw;
+  position: fixed;
+  bottom: 1%;
+  left: 12%;
+  margin: auto;
+}
+.orangemenu {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+}
+.menuwidth {
+  position: absolute;
+  top: 20%;
+  left: 3%;
+  height: 58%;
+  width: 95%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow-y: auto;
+  grid-column-gap: 10px;
+}
+
+.course {
+  /*border: black solid 5px;*/
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+.itemname,
+.itemdesc {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  text-decoration-color: black;
+}
+.appetizer {
+  background-color: #6ad99a;
+  opacity: 0.64;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row: 1;
+  margin-block: 10px;
+}
+.entree {
+  background-color: #31b3ff;
+  opacity: 0.64;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-block: 10px;
+}
+
+.coursetitle {
+  margin: auto;
+  grid-row: 1/2;
+}
+.dessert {
+  background-color: #9f44dc;
+  opacity: 0.64;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-block: 10px;
+}
+.beverage {
+  background-color: #ffeb31;
+  opacity: 0.64;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-block: 10px;
 }
