@@ -1,10 +1,9 @@
 body {
-  background-image: url(graycloth.jpg);
-  background-size: cover;
-  background-position: -180px -56px;
-  background-attachment: absolute;
-  background-repeat: repeat;
-  background-size: 120%;
+  background-image: url(foodplate1.png), url(foodplate2.png), url(graycloth.jpg);
+  background-size: 30%, 30%, cover;
+  background-position: 1070px 310px, 20px 100px, -180px -56px;
+  background-attachment: fixed, fixed, fixed;
+  background-repeat: no-repeat, no-repeat, repeat;
   overflow: hidden;
 }
 .food1contain {
