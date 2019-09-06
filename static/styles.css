@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Sunset Boulevard;
+  src: url(../static/SunsetBoulevard.otf);
+}
 body {
   background-image: url(foodplate1.png), url(foodplate2.png), url(graycloth.jpg);
   background-size: 30%, 30%, cover;
@@ -183,6 +187,7 @@ body {
   overflow-y: auto;
   display: flex;
   justify-content: center;
+  -webkit- 
 }
 
 .restauranttitle {
