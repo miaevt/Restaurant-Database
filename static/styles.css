@@ -4,7 +4,6 @@ body {
   background-position: 1070px 310px, 20px 100px, -180px -56px;
   background-attachment: fixed, fixed, fixed;
   background-repeat: no-repeat, no-repeat, repeat;
-  overflow: hidden;
 }
 .food1contain {
   height: 483px;
@@ -37,13 +36,12 @@ body {
   background-color: #f9fcd1;
   border-radius: 23px;
   border: none;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .title {
-  height: 50%;
-  width: 50%;
-  top: 35%;
-  position: relative;
+  position: absolute;
+  font: 8em "Sunset Boulevard";
 }
 .greenbox {
   position: fixed;
@@ -93,30 +91,27 @@ body {
 }
 .menucontain {
   z-index: 1;
-  height: 650px;
-  width: 76vw;
+  height: 90vh;
+  width: 70vw;
   position: fixed;
-  bottom: 1%;
-  left: 12%;
+  bottom: 4%;
+  left: 15%;
   margin: auto;
 }
-.orangemenu {
+.bluemenu {
   height: 100%;
   width: 100%;
   z-index: 1;
   position: absolute;
 }
-.menuwidth {
+.menuright {
   position: absolute;
-  top: 20%;
-  left: 3%;
-  height: 58%;
-  width: 95%;
+  top: 10.5%;
+  right: 3%;
+  height: 78%;
+  width: 42%;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   overflow-y: auto;
-  grid-column-gap: 10px;
 }
 
 .course {
@@ -135,40 +130,68 @@ body {
   text-decoration-color: black;
 }
 .appetizer {
-  background-color: #6ad99a;
+  /*background-color: #6ad99a;*/
   opacity: 0.64;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-row: 1;
   margin-block: 10px;
+  border: black solid 2px;
 }
 .entree {
-  background-color: #31b3ff;
+  /*background-color: #31b3ff;*/
   opacity: 0.64;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
   margin-block: 10px;
+  border: black solid 2px;
 }
 
 .coursetitle {
   margin: auto;
-  grid-row: 1/2;
+  margin-bottom: 4%;
+  grid-column: 1/3;
+  background-size: cover;
 }
 .dessert {
-  background-color: #9f44dc;
+  /*background-color: #9f44dc;*/
   opacity: 0.64;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
   margin-block: 10px;
+  border: black solid 2px;
 }
 .beverage {
-  background-color: #ffeb31;
+  /*background-color: #ffeb31;*/
   opacity: 0.64;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 50% 50%;
   margin-block: 10px;
+  border: black solid 2px;
+}
+.menuleft {
+  position: absolute;
+  top: 10.5%;
+  left: 4.9%;
+  height: 78%;
+  width: 39%;
+  z-index: 5;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.restauranttitle {
+  font: 4em "Sunset Boulevard";
+  position: absolute;
+  top: 35%;
+  z-index: 5;
+  display: flex;
+  flex-grow: inherit;
+  flex: auto;
+  text-align: center;
 }

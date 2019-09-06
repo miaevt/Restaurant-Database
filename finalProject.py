@@ -102,7 +102,23 @@ def showMenu(restaurant_id):
         Restaurant).filter_by(id=restaurant_id).one()
     items = session.query(MenuItem).filter_by(
         restaurant_id=restaurant_id).all()
-    return render_template('menu.html', restaurant=restaurant, items=items)
+    app = []
+    ent = []
+    des = []
+    bev = []
+    for item in items:
+        if item.course == 'appetizer' or item.course == 'Appetizer':
+            app.append(item)
+    for item in items:
+        if item.course == 'entree' or item.course == 'Entree':
+            ent.append(item)
+    for item in items:
+        if item.course == 'dessert' or item.course == 'Dessert':
+            des.append(item)
+    for item in items:
+        if item.course == 'beverage' or item.course == 'Beverage':
+            bev.append(item)
+    return render_template('menu.html', restaurant=restaurant, items=items, app=app, ent=ent, des=des, bev=bev)
 
 
 # This page is for making a new menu item
