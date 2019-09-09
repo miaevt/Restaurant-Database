@@ -1,35 +1,21 @@
 @font-face {
   font-family: Sunset Boulevard;
-  src: url(../static/SunsetBoulevard.otf);
+  src: url(SunsetBoulevard.otf);
+}
+@font-face {
+  font-family: Hamburger Heaven;
+  src: url(HAMBH___.TTF);
+}
+@font-face {
+  font-family: Byom Icons;
+  src: url(Byom-Icons-Trial.ttf);
 }
 body {
   background-image: url(foodplate1.png), url(foodplate2.png), url(graycloth.jpg);
-  background-size: 30%, 30%, cover;
+  background-size: 30%, 32%, cover;
   background-position: 1070px 310px, 20px 100px, -180px -56px;
   background-attachment: fixed, fixed, fixed;
   background-repeat: no-repeat, no-repeat, repeat;
-}
-.food1contain {
-  height: 483px;
-  width: 469px;
-  border: none;
-  margin: 20% 10% 0% 70%;
-}
-.food1 {
-  height: 97%;
-  width: 97%;
-  margin: 0% 0% 0% 0%;
-}
-.food2contain {
-  height: 483px;
-  width: 469px;
-  border: none;
-  margin: -45% 0% 0% 0%;
-}
-.food2 {
-  height: 90%;
-  width: 90%;
-  margin: 0% 0% 0% 0%;
 }
 .yellowbox {
   position: fixed;
@@ -47,6 +33,17 @@ body {
   position: absolute;
   font: 8em "Sunset Boulevard";
 }
+.addbutton {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+.addbutton:active {
+  background-color: white;
+}
 .greenbox {
   position: fixed;
   bottom: -30%;
@@ -54,7 +51,7 @@ body {
   height: 686px;
   width: 60vw;
   background-color: #d2eae3;
-  background-image: url(../static/confetti.png);
+  background-image: url(confetti.png);
   background-size: 30%;
   background-repeat: repeat;
   border-radius: 23px;
@@ -77,21 +74,15 @@ body {
   text-align: center;
   position: relative;
   margin: auto;
-  padding: 1%;
 }
 .rname {
   text-decoration: none;
   color: #3c3b3b;
   font: 2.5em "Gabriola";
 }
-.nav-links {
-  text-decoration: none;
-  color: #9c9595;
-  font: 1em sans-serif;
-  padding: 5%;
-}
 .rname:hover {
   background-color: #f9c459;
+  border-radius: 5%;
 }
 .menucontain {
   z-index: 1;
@@ -102,6 +93,29 @@ body {
   left: 15%;
   margin: auto;
 }
+.editbutton {
+  position: absolute;
+  right: 45%;
+  top: 1%;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 2;
+}
+.editbutton:active {
+  background-color: #c7fde4;
+  border-radius: 20%;
+}
+.exitmenu {
+  right: 1%;
+  top: 1%;
+  position: absolute;
+  z-index: 2;
+}
+.exitbutton:active {
+  background-color: #c7fde4;
+  border-radius: 100%;
+}
 .bluemenu {
   height: 100%;
   width: 100%;
@@ -110,9 +124,9 @@ body {
 }
 .menuright {
   position: absolute;
-  top: 10.5%;
+  top: 10.6%;
   right: 3%;
-  height: 78%;
+  height: 78.8%;
   width: 42%;
   z-index: 1;
   overflow-y: auto;
@@ -125,12 +139,18 @@ body {
   width: 100%;
   overflow-wrap: break-word;
 }
-.itemname,
-.itemdesc {
+.itemname {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
   margin-bottom: 6px;
+  text-decoration-color: black;
+}
+.itemdesc {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 8px;
   text-decoration-color: black;
 }
 .appetizer {
@@ -187,11 +207,11 @@ body {
   overflow-y: auto;
   display: flex;
   justify-content: center;
-  -webkit- 
 }
 
 .restauranttitle {
-  font: 4em "Sunset Boulevard";
+  font: 4em "Hamburger Heaven";
+  color: #480b0b;
   position: absolute;
   top: 35%;
   z-index: 5;
@@ -199,4 +219,78 @@ body {
   flex-grow: inherit;
   flex: auto;
   text-align: center;
+}
+#newrestdiv,
+#editrestdiv,
+#deleterestdiv,
+#edititemdiv {
+  top: 30%;
+  left: 38%;
+  width: 30%;
+  height: 50%;
+  border: none;
+  display: none;
+  position: absolute;
+  z-index: 7;
+}
+.inputform {
+  width: 85%;
+  height: 85%;
+  border: black solid 1px;
+  border-radius: 5%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  background-color: azure;
+  text-align: center;
+}
+.exitform {
+  right: 12%;
+  top: 12%;
+  position: absolute;
+}
+.exitform:active {
+  background-color: #54c9f771;
+  border-radius: 100%;
+}
+.submitform {
+  background-color: #7490c4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+}
+.editmenubuttons {
+  position: relative;
+  text-align: center;
+  display: none;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 4%;
+}
+.nav-links:active {
+  color: red;
+}
+.nav-links {
+  text-decoration: none;
+  color: black;
+  font: 1em "Byom Icons";
+}
+#editrestaurant {
+  color: black;
+  font: 0.5em "Byom Icons";
+  position: relative;
+  background: none;
+  border: none;
+}
+#deleterestaurant {
+  color: black;
+  font: 0.5em "Byom Icons";
+  position: relative;
+  background: none;
+  border: none;
+  bottom: 5%;
 }

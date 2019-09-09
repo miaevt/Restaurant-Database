@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Edit Menu Item</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static',
+        filename='styles.css')
+    }}">
+    <script
+      src="{{ url_for('static',
+                filename='js.js')}}"
+      type="text/javascript"
+    ></script>
   </head>
   <form
     action="{{ url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}"
     method="POST"
   >
-    <h2>Edit {{ item.name }}</h2>
-    <p>Name:<input type="text" name="name" value="{{ item.name }}" /></p>
-    <p>Course:<input type="text" name="course" value="{{ item.course }}" /></p>
-    <p>Price:<input type="text" name="price" value="{{ item.price }}" /></p>
-    <p>
-      Description:<textarea
-        name="description"
-        rows="10"
-        cols="30"
-        draggable="false"
-        >{{ item.description }}</textarea
-      >
-    </p>
-    <input type="submit" value="Edit" />
-    <button
-      type="submit"
-      formaction="{{ url_for('showMenu', restaurant_id=restaurant_id) }}"
-    >
-      Cancel
-    </button>
+    <h2>Edit Menu Item</h2>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" value="{{ item.name }}" /></td>
+      </tr>
+      <tr>
+        <td>Course:</td>
+        <td><input type="text" name="course" value="{{ item.course }}" /></td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td><input type="text" name="price" value="{{ item.price }}" /></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td>
+          <textarea
+            name="description"
+            rows="6"
+            cols="25"
+            style="resize: none;"
+            >{{ item.description }}</textarea
+          >
+        </td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Edit" /></td>
+        <td>
+          <button
+            type="submit"
+            formaction="{{ url_for('showMenu', restaurant_id=restaurant_id) }}"
+          >
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </table>
   </form>
 </html>

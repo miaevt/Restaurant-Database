@@ -74,7 +74,7 @@ def editRestaurant(restaurant_id):
         restaurant.name = request.form['name']
         session.add(restaurant)
         session.commit()
-        return redirect(url_for('showRestaurants'))
+        return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     else:
         return render_template('editrestaurant.html', restaurant=restaurant)
 

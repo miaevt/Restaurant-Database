@@ -6,21 +6,27 @@ filename='styles.css')
 
 
 
+
     }}">
+    <script
+      src="{{ url_for('static',
+        filename='js.js')}}"
+      type="text/javascript"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Restaurants</title>
   </head>
   <body>
-    <!--<h1>
-      Restaurants
-      <h4>
-        <a href="{{ url_for('newRestaurant') }}">Create new restaurant</a>
-      </h4>
-    </h1>-->
     <div class="yellowbox">
       <h1 class="title">Restaurants</h1>
+      <img
+        src="{{ url_for('static',
+                filename='addbutton.png')}}"
+        class="addbutton"
+        onclick="newrestaurant_show()"
+      />
     </div>
     <div class="greenbox">
       <div class="restcontain">
@@ -32,23 +38,33 @@ filename='styles.css')
             >{{ restaurant.name }}</a
           >
           <br />
-          <!-- <a
-            href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}"
-            class="nav-links"
-            >Edit</a
-          >
-          <a
-            href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}"
-            class="nav-links"
-            >Delete</a
-            >-->
         </div>
-
         {% endfor %}
       </div>
     </div>
     {% else %}
     <p>There are currently no restaurants.</p>
     {% endif %}
+    <div id="newrestdiv">
+      <form
+        action="{{ url_for('newRestaurant') }}"
+        class="inputform"
+        method="POST"
+      >
+        <h2>Add New Restaurant</h2>
+        <br /><br />
+        <p>
+          Name:
+          <input type="text" name="name" required />
+        </p>
+        <br />
+        <input type="submit" value="Submit" class="submitform" />
+      </form>
+      <img
+        src="{{ url_for('static', filename='exitbutton2.png')}}"
+        onclick="newrestaurant_hide()"
+        class="exitform"
+      />
+    </div>
   </body>
 </html>
