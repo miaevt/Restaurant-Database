@@ -20,7 +20,12 @@
         src="{{ url_for('static', filename='editbutton.png')}}"
         class="editbutton"
         onclick="editrestaurant_show()"
-      />
+      /><a href="{{ url_for('newMenuItem',restaurant_id=restaurant.id) }}"
+        ><img
+          src="{{ url_for('static', filename='addbutton.png')}}"
+          id="addbutton"
+          class="editmenubuttons"
+      /></a>
       <a href="{{ url_for('showRestaurants') }}" class="exitmenu"
         ><img
           src="{{ url_for('static',
@@ -56,9 +61,11 @@
             </h4>
             <p class="itemdesc">{{ item.description }}</p>
             <div class="editmenubuttons">
-              <button id="editrestaurant" onclick="edititem_show()">
-                E
-              </button>
+              <a
+                href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id) }}"
+                class="nav-links"
+                >E</a
+              >
               <a
                 href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id) }}"
                 class="nav-links"

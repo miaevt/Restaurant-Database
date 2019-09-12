@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Delete Menu Item</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static',
+            filename='styles.css')
+    }}">
+    <script
+      src="{{ url_for('static',
+                    filename='js.js')}}"
+      type="text/javascript"
+    ></script>
   </head>
   <form
     action="{{ url_for('deleteMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}"
+    class="deleteitemform"
     method="POST"
   >
-    <h4>Are you sure you want to delete {{ item.name }}?</h4>
-    <input type="submit" value="Yes" />
-    <button
-      type="submit"
-      formaction="{{ url_for('showMenu', restaurant_id=restaurant_id) }}"
-    >
-      No
-    </button>
+    <h2>Are you sure you want to delete {{ item.name }}?</h2>
+    <div style="text-align: center;">
+      <input type="submit" value="Yes" class="submitform" />
+      <input
+        type="submit"
+        value="No"
+        formaction="{{ url_for('showMenu', restaurant_id=restaurant_id) }}"
+        class="submitform"
+      />
+    </div>
   </form>
 </html>

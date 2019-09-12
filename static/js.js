@@ -22,16 +22,6 @@ function deleterestaurant_show() {
 function deleterestaurant_hide() {
   document.getElementById("deleterestdiv").style.display = "none";
 }
-//Function To Display Popup
-function edititem_show() {
-  x = window.location.href = "editmenuitem.html";
-  x.getElementById("edititemdiv").style.display = "block";
-}
-//Function to Hide Popup
-function edititem_hide() {
-  x = window.location.href = "editmenuitem.html";
-  x.getElementById("edititemdiv").style.display = "none";
-}
 //Function to display edit/delete restaurants
 function editrestaurant_show() {
   var x = document.getElementsByClassName("editmenubuttons");
