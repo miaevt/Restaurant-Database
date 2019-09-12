@@ -59,7 +59,7 @@ def newRestaurant():
         new = Restaurant(name=request.form['name'])
         session.add(new)
         session.commit()
-        return redirect(url_for('showRestaurants'))
+        return redirect(url_for('showMenu', restaurant_id=new.id))
     else:
         return render_template('newrestaurant.html')
 

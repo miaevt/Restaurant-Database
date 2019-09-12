@@ -73,7 +73,6 @@
               ><br />
             </div>
           </div>
-
           {% endfor %}
         </div>
         {% endif %} {% if ent %}
@@ -150,7 +149,12 @@
         </div>
         {% else %}
         <p style="grid-column: 1/3; text-align: center;">
-          There are currently no menu items.
+          There are currently no menu items.<br />
+          <a
+            href="{{ url_for('newMenuItem',restaurant_id=restaurant.id) }}"
+            style="grid-column: 1/3; text-align: center;"
+            >Add menu item</a
+          >
         </p>
         {% endif %}
       </div>
